@@ -678,14 +678,14 @@ span {
     right: 0;
     width: 50%;
     padding: 1rem 3%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(238, 233, 233, 0.727);
     backdrop-filter: blur(20px);
     border-bottom-left-radius: 2rem;
     border-left: 2px solid var(--main-color);
     border-bottom: 2px solid var(--main-color);
     display: none;
   }
-  .navbar .active {
+  .navbar.active {
     display: block;
   }
   .navbar a {
