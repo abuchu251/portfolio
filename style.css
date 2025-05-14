@@ -381,10 +381,11 @@ span {
 }
 
 .services-box:hover {
-  background: var(--second-bg-color);
+  background: transparent;
   color: black;
   transform: scale(1.05);
 }
+
 .services-box:hover .services-info > *:not(.services-links) {
   opacity: 0;
   visibility: hidden;
@@ -413,6 +414,9 @@ span {
   z-index: 0; /* Behind the info */
   opacity: 0.15; /* Optional: make it subtle */
 }
+.services-box:hover img {
+  opacity: 0.7;
+}
 .services-links {
   position: absolute;
   top: 60%;
@@ -421,13 +425,13 @@ span {
   display: flex;
   gap: 1rem;
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(15px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .services-links a {
-  background-color: white;
-  color: var(--main-color);
+  background-color: var(--main-color);
+  color: white;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
 
@@ -437,8 +441,8 @@ span {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .services-links a:hover {
-  background-color: var(--main-color);
-  color: white;
+  background-color: white;
+  color: var(--main-color);
   box-shadow: 0 0 25px var(--main-color);
 }
 
