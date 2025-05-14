@@ -19,11 +19,34 @@ window.onscroll = () => {
       });
     }
   });
-
-  // Close navbar when scrolling
-  menuIcon.classList.remove("bx-x");
-  navbar.classList.remove("active");
 };
+// Close navbar when scrolling
+menuIcon.classList.remove("bx-x");
+navbar.classList.remove("active");
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Animate once
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  // Combine all elements to be observed
+  const elementsToAnimate = document.querySelectorAll(
+    ".animate-on-scroll, .timeline-fade-left, .timeline-fade-right"
+  );
+
+  elementsToAnimate.forEach((el) => {
+    observer.observe(el);
+  });
+});
 
 menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
